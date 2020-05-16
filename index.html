@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta
-      name="description"
-      content="Can't decide how to split into teams? Team Generator takes care of it, easily."
-    />
-    <link rel="canonical" href="https://dougs.website/teams" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta
+			name="description"
+			content="Can't decide how to split into teams? Team Generator takes care of it, easily."
+		/>
+		<link rel="canonical" href="https://dougs.website/teams" />
 
-    <title>Team Generator</title>
+		<title>Team Generator</title>
 
-    <meta name="theme-color" content="#00838f" />
-    <link rel="icon" sizes="192x192" href="./images/icons/icon-192x192.png" />
+		<meta name="theme-color" content="#00838f" />
+		<link
+			rel="icon"
+			sizes="192x192"
+			href="./images/icons/icon-192x192.png"
+		/>
 
-    <link rel="manifest" href="./manifest.json" />
-    <link rel="stylesheet" href="style.css" />
+		<link rel="manifest" href="./manifest.json" />
+		<link rel="stylesheet" href="style.css" />
 
-    <script src="script.js"></script>
-  </head>
+		<script src="script.js"></script>
+	</head>
 
-  <body>
-    <header class="row btwn">
-      <span>Team Generator</span>
-      <div id="dark-toggle"></div>
-    </header>
+	<body>
+		<header class="row btwn">
+			<span>Team Generator</span>
+			<div id="dark-toggle"></div>
+		</header>
 
-    <div id="content" class="col">
-      <form action="" id="form" class="col">
-        <div class="col">
-          <div class="row btwn">
-            <label for="names-input">Names</label>
-            <button id="clear-names-btn" type="button">Clear</button>
-          </div>
-          <textarea
-            name="names-input"
-            id="names-input"
-            cols="30"
-            rows="10"
-            placeholder="Names, one per line"
-          ></textarea>
-        </div>
-        <div class="row btwn">
-          <label id="tCLabel" for="teamCount">Teams</label>
-          <input
-            type="number"
-            name="teamCount"
-            id="teamCount"
-            min="2"
-            max="99"
-            increment="1"
-            value="2"
-          />
-        </div>
-        <div class="row btwn">
-          <label for="asOrder">Random Order</label>
-          <label class="switch">
-            <input type="checkbox" name="asOrder" id="asOrder" />
-            <span class="slider"></span>
-          </label>
-        </div>
-        <div class="row">
-          <button type="submit" class="center">Generate Teams</button>
-        </div>
-      </form>
-      <div id="results"></div>
-    </div>
-  </body>
+		<div id="content" class="col">
+			<form action="" id="form" class="col">
+				<div class="col">
+					<div class="row btwn">
+						<label for="names-input">Names</label>
+						<button id="clear-names-btn" type="button">
+							Clear
+						</button>
+					</div>
+					<textarea
+						name="names-input"
+						id="names-input"
+						cols="30"
+						rows="10"
+						placeholder="Names, one per line"
+					></textarea>
+				</div>
+				<div class="row btwn">
+					<label id="tCLabel" for="teamCount">Teams</label>
+					<input
+						type="number"
+						name="teamCount"
+						id="teamCount"
+						min="2"
+						max="99"
+						increment="1"
+						value="2"
+					/>
+				</div>
+				<div class="row btwn">
+					<label for="asOrder">Random Order</label>
+					<label class="switch">
+						<input type="checkbox" name="asOrder" id="asOrder" />
+						<span class="slider"></span>
+					</label>
+				</div>
+				<div class="row">
+					<button type="submit" class="center">Generate Teams</button>
+				</div>
+			</form>
+			<div id="results"></div>
+		</div>
+	</body>
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      // window.addEventListener("load", async function () {
-      //   let registrations = await navigator.serviceWorker.getRegistrations();
-      //   if (registrations.length == 0) {
-      //     navigator.serviceWorker
-      //       .register("./sw.js")
-      //       .catch((e) => console.log("Service worker failed to register", e));
-      //   }
-      // });
-    }
-  </script>
+	<script>
+		if ("serviceWorker" in navigator) {
+			// window.addEventListener("load", async function () {
+			//   let registrations = await navigator.serviceWorker.getRegistrations();
+			//   if (registrations.length == 0) {
+			//     navigator.serviceWorker
+			//       .register("./sw.js")
+			//       .catch((e) => console.log("Service worker failed to register", e));
+			//   }
+			// });
+		}
+	</script>
 </html>
