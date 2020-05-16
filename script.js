@@ -61,12 +61,12 @@ window.onload = () => {
             CLEAR_BUTTON.classList.add('show');
         }
 
-        //NAMES_INPUT.value.trim().split('\n');
+        NAMES_INPUT.value.trim().split('\n');
 
         CLEAR_BUTTON.addEventListener('click', function (e) {
             e.preventDefault();
             NAMES_INPUT.value = "";
-            storeNames(null);
+            SaveNames(null);
             CLEAR_BUTTON.classList.remove('show');
         })
     })();
