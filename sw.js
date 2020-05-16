@@ -3,7 +3,6 @@ self.addEventListener("install", (e) => {
     caches.open("dlteams").then((cache) => {
       return cache.addAll([
         "./",
-        "./teams",
         "./index.html",
         "./style.css",
         "./script.js",

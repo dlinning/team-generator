@@ -71,10 +71,13 @@
 
   <script>
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker
-          .register("./sw.js")
-          .catch((e) => console.log("Service worker failed to register", e));
+      window.addEventListener("load", async function () {
+        let registrations = await navigator.serviceWorker.getRegistrations();
+        if (registrations.length == 0) {
+          navigator.serviceWorker
+            .register("./sw.js")
+            .catch((e) => console.log("Service worker failed to register", e));
+        }
       });
     }
   </script>
