@@ -17,6 +17,7 @@ window.onload = () => {
             localStorage.removeItem(key)
         }
     }
+
     //
     //
 
@@ -49,7 +50,7 @@ window.onload = () => {
     function LoadNames() {
         const saved = StorageManager.get(STORAGE_KEYS.NAMES);
         if (saved === null) {
-            return "";
+            return null;
         } else {
             return saved.split('|~|').join('\n');
         }

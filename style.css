@@ -39,6 +39,7 @@ body {
 .row {
     display: flex;
     align-items: center;
+    min-height: 2rem;
 }
 .row > label {
     justify-self: flex-start;
@@ -134,6 +135,7 @@ button {
 button:focus {
     background-color: #005662;
 }
+
 label {
     font-weight: bold;
     font-size: 15px;
@@ -143,8 +145,6 @@ label {
 }
 
 #clear-names-btn{
-    position: absolute;
-    right: 0;
     display: none;
 }
 #clear-names-btn.show{
