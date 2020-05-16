@@ -8,7 +8,7 @@
 			name="description"
 			content="Can't decide how to split into teams? Team Generator takes care of it, easily."
 		/>
-		<link rel="canonical" href="https://dougs.website/teams" />
+		<link rel="canonical" href="https://teams.dougs.website" />
 
 		<title>Team Generator</title>
 
@@ -77,14 +77,16 @@
 
 	<script>
 		if ("serviceWorker" in navigator) {
-			// window.addEventListener("load", async function () {
-			//   let registrations = await navigator.serviceWorker.getRegistrations();
-			//   if (registrations.length == 0) {
-			//     navigator.serviceWorker
-			//       .register("./sw.js")
-			//       .catch((e) => console.log("Service worker failed to register", e));
-			//   }
-			// });
+			window.addEventListener("load", async function () {
+				let registrations = await navigator.serviceWorker.getRegistrations();
+				if (registrations.length == 0) {
+					navigator.serviceWorker
+						.register("./sw.js")
+						.catch((e) =>
+							console.log("Service worker failed to register", e)
+						);
+				}
+			});
 		}
 	</script>
 </html>

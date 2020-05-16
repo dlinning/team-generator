@@ -6,6 +6,7 @@ self.addEventListener("install", (e) => {
 				"./index.html",
 				"./style.css",
 				"./script.js",
+				"./images/icons/icon-192x192.png"
 			]);
 		})
 	);
@@ -16,8 +17,6 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-	console.log("fetching", event.request);
-
 	event.respondWith(
 		caches.match(event.request).then((response) => {
 			return response || fetch(event.request);
