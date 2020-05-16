@@ -68,6 +68,9 @@ window.onload = () => {
 			e.preventDefault();
 			NAMES_INPUT.value = "";
 			SaveNames(null);
+			if (Generator != undefined) {
+				Generator.target.innerHTML = "";
+			}
 			CLEAR_BUTTON.classList.remove("show");
 		});
 	})();
