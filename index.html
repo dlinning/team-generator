@@ -9,7 +9,7 @@
 			content="Can't decide how to split into teams? Team Generator takes care of it, easily."
 		/>
 		<link rel="canonical" href="https://teams.dougs.website" />
-		<base href="/" target="_top">
+		<base href="/" target="_top" />
 
 		<title>Team Generator</title>
 
@@ -82,7 +82,7 @@
 				let registrations = await navigator.serviceWorker.getRegistrations();
 				if (registrations.length == 0) {
 					navigator.serviceWorker
-						.register("./sw.js")
+						.register("./sw.js", { scope: "./" })
 						.catch((e) =>
 							console.log("Service worker failed to register", e)
 						);
