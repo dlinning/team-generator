@@ -21,16 +21,33 @@ window.onload = () => {
 	//
 	//
 
+	/** @type {HTMLInputElement} */
 	const NAMES_INPUT = document.getElementById("names-input");
+
+	/** @type {HTMLButtonElement} */
 	const CLEAR_BUTTON = document.getElementById("clear-names-btn");
 
+	/** @type {HTMLButtonElement} */
+	const GEN_BUTTON = document.getElementById("gen-btn");
+
+	/** @type {HTMLInputElement} */
 	const TEAMCOUNT_INPUT = document.getElementById("teamCount");
+
+	/** @type {HTMLCheckboxElement} */
 	const MODE_INPUT = document.getElementById("asOrder");
+
 	if (TEAMCOUNT_INPUT) {
 		TEAMCOUNT_INPUT.value = StorageManager.get(STORAGE_KEYS.TEAMCOUNT) || 2;
 	}
 	if (MODE_INPUT) {
 		MODE_INPUT.checked = StorageManager.get(STORAGE_KEYS.MODE) === "true";
+	}
+
+	if(MODE_INPUT.checked == true){
+		// Mode is checked, so in "order mode"
+		GEN_BUTTON.innerText = "Generate Order"
+	} else {
+		GEN_BUTTON.innerText = "Generate Teams"
 	}
 
 	// Saving & Loading Names
@@ -161,10 +178,18 @@ window.onload = () => {
 				// Generate and display.
 				if (this.asRandomOrder) {
 					this.hasEvenTeams = true; // Not really, but :shrug:
+
+					// Set this for the "next load"
+					GEN_BUTTON.innerText = "Generate Order"
+
 					this._renderAsOrder();
 				} else {
+					
 					this.hasEvenTeams =
 						this.names.length % this.teamCount === 0;
+
+					GEN_BUTTON.innerText = "Generate Teams"
+
 					this._renderAsTeams();
 				}
 			} else {
