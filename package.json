@@ -6,9 +6,10 @@
   "author": "dlinning <dlinning@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "http-server ./"
+    "dev": "servor ./ index.html 8081 --live"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "prettier": "^3.7.3",
+    "servor": "^4.0.2"
   }
 }

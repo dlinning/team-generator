@@ -1,0 +1,84 @@
+.row {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 1rem;
+
+	align-items: center;
+
+	width: 100%;
+	flex-grow: 1;
+}
+
+.col {
+	display: flex;
+	flex-flow: column;
+	gap: 1rem;
+
+	justify-content: center;
+}
+
+.row.half,
+.col.half {
+	gap: 0.25rem;
+}
+
+.grow {
+	flex-grow: 1;
+}
+
+.shrinkwrap {
+	flex-shrink: 1;
+}
+
+#results {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+#player-count {
+	grid-column: 1/-1;
+}
+
+/* Overwrites for Pico */
+
+fieldset legend,
+label {
+	margin: unset;
+	flex-grow: 1;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	margin: unset;
+}
+
+input:not([type="checkbox"], [type="radio"]),
+select,
+textarea {
+	margin-bottom: unset;
+	min-width: 5rem;
+}
+
+article {
+	margin-bottom: unset;
+}
+
+[type="button"]:not(.shrink) {
+	flex-grow: 1;
+}
+
+[type="checkbox"][role="switch"] {
+	width: 3.5rem;
+	height: 1.85rem;
+	margin: unset;
+}
+
+[type="checkbox"][role="switch"]:checked::before {
+	margin-inline-start: 1.75rem;
+}
+
+[type="number"] {
+	appearance: number-input;
+}
