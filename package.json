@@ -1,0 +1,14 @@
+{
+  "name": "team-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dlinning/team-generator.git",
+  "author": "dlinning <dlinning@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "http-server ./"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
